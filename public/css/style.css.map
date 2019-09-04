@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,CAAC,CAAC;EACE,UAAU,EAAE,UAAU;CAAG;;AED7B,AAAA,IAAI,CAAC;EACD,KAAK,EDDI,OAAO;CCCK",
+    "sources": [
+        "../../src/sass/style.sass",
+        "../../src/sass/_grid.sass",
+        "../../src/sass/_colors.sass",
+        "../../src/sass/_interface.sass",
+        "../../src/components/app/_app.sass",
+        "../../src/components/header/_header.sass",
+        "../../src/components/person-details/_person-details.sass",
+        "../../src/components/item-list/_item-list.sass",
+        "../../src/components/planet-details/_planet-details.sass",
+        "../../src/components/random-planet/_random-planet.sass",
+        "../../src/components/starship-details/_starship-details.sass"
+    ],
+    "names": [],
+    "file": "style.css"
+}
