@@ -3,11 +3,10 @@ import React from 'react';
 const Header = () => {
     return (
         <div className="nav" align="center">
-            <span className ="d-flex">
+            <div className="bg-color">
+                <span className ="d-flex">
                 <div className="logo">
-                    <a href="#">
-                    StarDB
-                    </a>
+                    <h3>StarDB</h3>
                 </div>
                 
                 <ul>
@@ -16,6 +15,8 @@ const Header = () => {
                     <li><a href="href">Starship</a></li>
                 </ul>
             </span>
+            </div>
+            
         </div>
     );
 };

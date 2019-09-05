@@ -4,7 +4,8 @@
     color: #fff 
     margin-left:auto 
     margin-right:auto 
-    background-color: #353539 
+    background-color: rgba(50, 56, 62, .70)
+    border-radius: 0rem !important
     height: 70px 
     width: auto 
     font-weight: bold 
@@ -36,10 +37,24 @@
 
 .logo 
     margin: 4px 50px 
-    
     padding: .5rem
-    & a
+    
+    & h3 
+        position: relative
+        font-family: 'Orbitron', sans-serif
         font-size: 2rem
-        color: #ffd200 
-        &:hover 
-            color: #00bc8c
+        letter-spacing: -3px
+        color: #00d3eb
+        &:after
+            content: "StarDB"
+            position: absolute
+            left: 0
+            top: -2px
+            color: #ffd200
+            mix-blend-mode: multipl
+            z-index: 10
+
+
+    
+
+            
