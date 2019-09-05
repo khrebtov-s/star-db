@@ -237,4 +237,23 @@ body {
   -webkit-transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
   transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
 }
+
+.error-indicator {
+  text-align: center;
+  width: 100%;
+}
+
+.error-indicator-title h1 {
+  color: #ffd200;
+  text-align: center;
+}
+
+.error-indicator-text h3 {
+  text-align: center;
+}
+
+.error-indicator-icon {
+  width: 80px;
+  margin-bottom: 5px;
+}
 /*# sourceMappingURL=style.css.map */
