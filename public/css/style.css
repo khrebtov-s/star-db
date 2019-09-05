@@ -20,7 +20,8 @@ body {
   font-size: 15px;
   color: #fff;
   background-color: rgba(50, 56, 62, 0.7);
-  border-radius: 0rem !important;
+  border-radius: .25rem !important;
+  border: 1px solid #444;
   height: 70px;
   width: auto;
   font-weight: bold;
@@ -111,6 +112,7 @@ body {
 }
 
 .item-list .list-group-item {
+  border: 1px solid #444;
   cursor: pointer;
   color: #ffd200;
 }
@@ -214,13 +216,9 @@ body {
   left: 20px;
   border-radius: 50%;
   border: 8px solid #000;
-  border-color: #3d7ec0 transparent #3d7ec0 transparent;
+  border-color: #ffd200 transparent #ffd200 transparent;
   -webkit-animation: lds-double-ring 1.5s linear infinite;
   animation: lds-double-ring 1.5s linear infinite;
-  width: 77px !important;
-  height: 77px !important;
-  -webkit-transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
-  transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
 }
 
 .lds-double-ring div:nth-child(2) {
@@ -228,8 +226,15 @@ body {
   height: 140px;
   top: 30px;
   left: 30px;
-  border-color: transparent #cc4545 transparent #cc4545;
+  border-color: transparent #119690 transparent #119690;
   -webkit-animation: lds-double-ring_reverse 1.5s linear infinite;
   animation: lds-double-ring_reverse 1.5s linear infinite;
+}
+
+.lds-double-ring {
+  width: 77px !important;
+  height: 77px !important;
+  -webkit-transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
+  transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
 }
 /*# sourceMappingURL=style.css.map */
