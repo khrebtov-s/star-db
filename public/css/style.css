@@ -15,6 +15,10 @@ body {
   color: #119690;
 }
 
+.toggle-planet {
+  margin: 20px;
+}
+
 .nav {
   font-family: Century Gothic, Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -123,7 +127,7 @@ body {
 
 .random-planet {
   background-color: rgba(50, 56, 62, 0.7);
-  margin: 20px 0;
+  margin: 20px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
