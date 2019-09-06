@@ -206,6 +206,10 @@ body {
 
 .lds-double-ring {
   position: relative;
+  width: 77px !important;
+  height: 77px !important;
+  -webkit-transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
+  transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
 }
 
 .lds-double-ring div {
@@ -229,13 +233,6 @@ body {
   border-color: transparent #119690 transparent #119690;
   -webkit-animation: lds-double-ring_reverse 1.5s linear infinite;
   animation: lds-double-ring_reverse 1.5s linear infinite;
-}
-
-.lds-double-ring {
-  width: 77px !important;
-  height: 77px !important;
-  -webkit-transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
-  transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
 }
 
 .error-indicator {
