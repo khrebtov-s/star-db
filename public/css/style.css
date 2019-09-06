@@ -4,10 +4,10 @@
 }
 
 body {
+  overflow: auto;
   color: white;
   background: url(../images/bg.jpg) no-repeat center;
   background-size: cover;
-  height: 100vh;
 }
 
 .term {

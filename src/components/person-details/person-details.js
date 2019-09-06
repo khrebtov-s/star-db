@@ -34,12 +34,13 @@ export default class PersonDetails extends Component {
 
   render() {
 
-    if (!this.state.person) {
+    const { person } = this.state;
+    if (!person) {
       return <span>Select a person from a list</span>;
     }
 
     const { id, name, gender,
-              birthYear, eyeColor } = this.state.person;
+              birthYear, eyeColor } = person;
 
     return (
       <div className="person-details card">
@@ -48,7 +49,7 @@ export default class PersonDetails extends Component {
           alt="character"/>
 
         <div className="card-body">
-          <h4>{name} {this.props}</h4>
+          <h4>{name}</h4>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               <span className="term">Gender</span>
