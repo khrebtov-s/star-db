@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import ErrorIndicator from '../error-indicator';
-import PeoplePage from '../people-page';
 
 import ItemList from "../item-list/item-list";
 import PersonDetails from "../person-details/person-details";
 import SwapiService from "../../services/swapi-service";
+import Row from '../row';
+import ItemDetails, { Record } from "../item-details/item-details";
 
 export default class App extends Component {
 
@@ -36,25 +37,47 @@ export default class App extends Component {
       return <ErrorIndicator />
     }
 
+    const { getPerson, getStarship, getPersonImage, getPlanetImage, getStarshipImage } = this.swapiService;
+
     const planet = this.state.showRandomPlanet ?
       <RandomPlanet/> :
       null;
+    
+    const personDetails = (
+     <ItemDetails itemId={11}
+      getData = {getPerson}
+      getImageUrl = {getPersonImage}> 
+        <Record field = "gender" label = "Gender"/>
+        <Record field = "eyeColor" label = "Eye Color"/>
+      </ItemDetails>
+    )
+   
+
+    const starshipDetails = (
+      <ItemDetails itemId={3}
+      getData = {getStarship}
+      getImageUrl = {getStarshipImage}/> 
+    ); 
 
     return (
       <div className="stardb-app">
         <Header />
-        { planet }
+        {/* { planet } */}
 
-        <div className="row mb2 button-row">
+        {/* <div className="row mb2 button-row">
           <button
             className="toggle-planet btn btn-warning btn-lg"
             onClick={this.toggleRandomPlanet}>
             Toggle Random Planet
           </button>
          
-        </div>
+        </div> */}
+        <Row
+          left = {personDetails}
+          right = {starshipDetails}/>
 
-        <PeoplePage />
+
+        {/* <PeoplePage /> */}
  
         {/* <div className="row mb2">
           <div className="col-md-6">

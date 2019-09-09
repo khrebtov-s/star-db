@@ -23,12 +23,15 @@ body {
   font-family: Century Gothic, Arial, Helvetica, sans-serif;
   font-size: 15px;
   color: #fff;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgba(50, 56, 62, 0.7);
   border-radius: .25rem !important;
   border: 1px solid #444;
   height: 70px;
   width: auto;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .nav ul {
@@ -256,5 +259,25 @@ body {
 .error-indicator-icon {
   width: 80px;
   margin-bottom: 5px;
+}
+
+.item-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1rem;
+  border: 1px solid #444;
+  padding: 0.25rem;
+  margin-top: 5px;
+}
+
+.item-details .item-image {
+  width: 30%;
+  height: 30%;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=style.css.map */
