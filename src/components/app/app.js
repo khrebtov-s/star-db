@@ -55,7 +55,7 @@ export default class App extends Component {
         </div>
 
         <PeoplePage />
-
+ 
         <div className="row mb2">
           <div className="col-md-6">
             <ItemList
