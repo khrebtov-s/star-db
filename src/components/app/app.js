@@ -7,6 +7,7 @@ import ErrorIndicator from '../error-indicator';
 import ItemList from "../item-list/item-list";
 // import PersonDetails from "../person-details/person-details";
 import SwapiService from "../../services/swapi-service";
+import DummySwapiService from "../../services/dummy-swapi-service";
 import Row from '../row';
 import ItemDetails, { Record } from "../item-details/item-details";
 
@@ -22,7 +23,7 @@ import { SwapiServiceProvider } from '../swapi-service-context';
 
 export default class App extends Component {
 
-  swapiService = new SwapiService();
+  swapiService = new DummySwapiService();
 
   state = {
     showRandomPlanet: true,
@@ -47,35 +48,35 @@ export default class App extends Component {
       return <ErrorIndicator />
     }
 
-    const { getPerson, getStarship, getPersonImage, getPlanetImage, getStarshipImage } = this.swapiService;
+    // const { getPerson, getStarship, getPersonImage, getPlanetImage, getStarshipImage } = this.swapiService;
 
     const planet = this.state.showRandomPlanet ?
-      <RandomPlanet/> :
+      <RandomPlanet /> :
       null;
 
     return (
       <SwapiServiceProvider value={this.swapiService}>
-      <div className="stardb-app">
-        <Header />
+        <div className="stardb-app">
+          <Header />
 
-        <PersonDetails itemId={11} />
+          <PersonDetails itemId={11} />
 
           <PlanetDetails itemId={5} />
 
           <StarshipDetails itemId={9} />
 
-        <PersonList/>
-        
-         <StarshipList/>
-        
-        <PlanetList/>
-        
-        
-        {/* <Row
+          <PersonList />
+
+          <StarshipList />
+
+          <PlanetList />
+
+
+          {/* <Row
           left = {personDetails}
           right = {starshipDetails}/> */}
-        
-      </div>
+
+        </div>
       </SwapiServiceProvider>
     );
   }
