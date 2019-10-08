@@ -23,11 +23,10 @@ import { SwapiServiceProvider } from '../swapi-service-context';
 
 export default class App extends Component {
 
-  swapiService = new DummySwapiService();
-
   state = {
     showRandomPlanet: true,
-    hasError: false
+    hasError: false,
+    swapiService: DummySwapiService();
   };
 
   toggleRandomPlanet = () => {
@@ -40,6 +39,10 @@ export default class App extends Component {
 
   componentDidCatch() {
     this.setState({ hasError: true });
+  }
+
+  onServiceChange = () => {
+    console.log('Добился своего!')
   }
 
   render() {
@@ -55,9 +58,9 @@ export default class App extends Component {
       null;
 
     return (
-      <SwapiServiceProvider value={this.swapiService}>
+      <SwapiServiceProvider value={this.state.swapiService}>
         <div className="stardb-app">
-          <Header />
+          <Header onServiceChange={this.onServiceChange} />
 
           <PersonDetails itemId={11} />
 

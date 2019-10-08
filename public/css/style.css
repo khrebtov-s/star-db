@@ -49,6 +49,13 @@ body {
   margin: 0px;
 }
 
+.nav ul li button {
+  top: 1.5rem;
+  position: absolute;
+  color: #ffd200;
+  margin-left: 4rem;
+}
+
 .nav ul li a {
   text-decoration: none;
   color: #d2d2d2;
