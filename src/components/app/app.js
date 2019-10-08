@@ -56,7 +56,7 @@ export default class App extends Component {
     const planet = this.state.showRandomPlanet ?
       <RandomPlanet /> :
       null;
-
+    console.log('testtest')
     return (
       <SwapiServiceProvider value={this.state.swapiService}>
         <div className="stardb-app">
