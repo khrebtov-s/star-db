@@ -16,11 +16,6 @@ const renderName = ({ name }) => <span>{name}</span>;
 
 const renserModelAndName = ({ model, name }) => <span>{name} ({model})</span>;
 
-// const LIstWithChildren = withChildFunction(
-//     ItemList,
-//     ({ name }) => <span>{name}</span>
-// )
-
 const mapPersonMethodToProps = (swapiService) => {
     return {
         getData: swapiService.getAllPeople

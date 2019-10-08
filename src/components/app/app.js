@@ -10,6 +10,8 @@ import SwapiService from "../../services/swapi-service";
 import DummySwapiService from "../../services/dummy-swapi-service";
 import Row from '../row';
 import ItemDetails, { Record } from "../item-details/item-details";
+import { PeoplePage, PlanetsPage, StarshipsPage } from '../pages';
+
 
 import {
   PersonDetails,
@@ -26,15 +28,7 @@ export default class App extends Component {
   state = {
     showRandomPlanet: true,
     hasError: false,
-    swapiService: DummySwapiService();
-  };
-
-  toggleRandomPlanet = () => {
-    this.setState((state) => {
-      return {
-        showRandomPlanet: !state.showRandomPlanet
-      }
-    });
+    swapiService: new SwapiService(),
   };
 
   componentDidCatch() {
@@ -42,8 +36,16 @@ export default class App extends Component {
   }
 
   onServiceChange = () => {
-    console.log('Добился своего!')
-  }
+    this.setState(({ swapiService }) => {
+
+      const Service = swapiService instanceof SwapiService ?
+        DummySwapiService : SwapiService;
+
+      return {
+        swapiService: new Service()
+      };
+    });
+  };
 
   render() {
 
@@ -51,33 +53,19 @@ export default class App extends Component {
       return <ErrorIndicator />
     }
 
-    // const { getPerson, getStarship, getPersonImage, getPlanetImage, getStarshipImage } = this.swapiService;
-
     const planet = this.state.showRandomPlanet ?
       <RandomPlanet /> :
       null;
-    console.log('testtest')
     return (
       <SwapiServiceProvider value={this.state.swapiService}>
         <div className="stardb-app">
           <Header onServiceChange={this.onServiceChange} />
+          {planet}
 
-          <PersonDetails itemId={11} />
-
-          <PlanetDetails itemId={5} />
-
-          <StarshipDetails itemId={9} />
-
-          <PersonList />
-
-          <StarshipList />
-
-          <PlanetList />
-
-
-          {/* <Row
-          left = {personDetails}
-          right = {starshipDetails}/> */}
+          <RandomPlanet />
+          <PeoplePage />
+          <PlanetsPage />
+          <StarshipsPage />
 
         </div>
       </SwapiServiceProvider>
