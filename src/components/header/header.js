@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = ({ onServiceChange }) => {
     return (
@@ -6,13 +7,12 @@ const Header = ({ onServiceChange }) => {
             <div className="bg-color">
                 <span className="d-flex">
                     <div className="logo">
-                        <h3>StarDB</h3>
+                        <Link to="/"><h3>StarDB</h3></Link>
                     </div>
-
                     <ul>
-                        <li><a href="href">Peoples</a></li>
-                        <li><a href="href">Planets</a></li>
-                        <li><a href="href">Starship</a></li>
+                        <li><Link to="/people">Peoples</Link></li>
+                        <li><Link to="/planets">Planets</Link></li>
+                        <li><Link to="/starships">Starship</Link></li>
                         <li>
                             <button
                                 onClick={onServiceChange}
@@ -21,7 +21,6 @@ const Header = ({ onServiceChange }) => {
                              </button>
                         </li>
                     </ul>
-
                 </span>
             </div>
 

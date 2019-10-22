@@ -64,6 +64,10 @@ export default class App extends Component {
             <RandomPlanet />
 
             <Route
+              path="/"
+              render={() => <h2 style={{ textAlign: 'center' }}>Welcome to star DB</h2>}
+              exact={true} />
+            <Route
               path="/people"
               component={PeoplePage} />
             <Route
@@ -71,7 +75,13 @@ export default class App extends Component {
               component={PlanetsPage} />
             <Route
               path="/starships"
-              component={StarshipsPage} />
+              component={StarshipsPage}
+              exact={true} />
+            <Route
+              path="/starships/:id"
+              render={({ match }) => {
+                return < StarshipDetails itemId={match.params.id} />
+              }} />
 
           </div>
         </Router>
