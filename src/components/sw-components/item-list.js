@@ -2,7 +2,7 @@ import React from 'react';
 import ItemList from '../item-list';
 import { WithData, withSwapiService } from '../hoc-halpers';
 
-const withChildFunction = (Wrapped, fn) => {
+const withChildFunction = (fn) => (Wrapped) => {
     return (props) => {
         return (
             <Wrapped {...props}>
@@ -14,7 +14,7 @@ const withChildFunction = (Wrapped, fn) => {
 
 const renderName = ({ name }) => <span>{name}</span>;
 
-const renserModelAndName = ({ model, name }) => <span>{name} ({model})</span>;
+const renderModelAndName = ({ model, name }) => <span>{name} ({model})</span>;
 
 const mapPersonMethodToProps = (swapiService) => {
     return {
@@ -34,18 +34,18 @@ const mapStarshipMethodsToProps = (swapiService) => {
     };
 };
 
-const PersonList = withSwapiService(
+const PersonList = withSwapiService(mapPersonMethodToProps)(
     WithData(
-        withChildFunction(ItemList, renderName)),
-    mapPersonMethodToProps);
-const PlanetList = withSwapiService(
+        withChildFunction(renderName)(
+            ItemList)));
+const PlanetList = withSwapiService(mapPlanetMethodsToProps)(
     WithData(
-        withChildFunction(ItemList, renderName)),
-    mapPlanetMethodsToProps);
-const StarshipList = withSwapiService(
+        withChildFunction(renderName)(
+            ItemList)));
+const StarshipList = withSwapiService(mapStarshipMethodsToProps)(
     WithData(
-        withChildFunction(ItemList, renderName)),
-    mapStarshipMethodsToProps);
+        withChildFunction(renderModelAndName)(
+            ItemList)));
 
 export {
     PersonList,

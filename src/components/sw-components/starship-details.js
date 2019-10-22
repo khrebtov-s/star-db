@@ -7,8 +7,9 @@ import { withSwapiService } from '../hoc-halpers';
 const StarshipDetails = (props) => {
     return (
         <ItemDetails {...props} >
-            <Record field="gender" label="Gender" />
-            <Record field="eyeColor" label="Eye Color" />
+            <Record field="model" label="Model" />
+            <Record field="length" label="Length" />
+            <Record field="costInCredits" label="Cost" />
         </ItemDetails >
     );
 }
@@ -20,7 +21,7 @@ const mapMethodsToProps = (swapiService) => {
     }
 }
 
-export default withSwapiService(StarshipDetails, mapMethodsToProps);
+export default withSwapiService(mapMethodsToProps)(StarshipDetails);
 
 
     // export default StarshipDetails;

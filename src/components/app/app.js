@@ -11,7 +11,7 @@ import DummySwapiService from "../../services/dummy-swapi-service";
 import Row from '../row';
 import ItemDetails, { Record } from "../item-details/item-details";
 import { PeoplePage, PlanetsPage, StarshipsPage } from '../pages';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import {
   PersonDetails,
@@ -53,21 +53,28 @@ export default class App extends Component {
       return <ErrorIndicator />
     }
 
-    const planet = this.state.showRandomPlanet ?
-      <RandomPlanet /> :
-      null;
+    // const planet = this.state.showRandomPlanet ?
+    //   <RandomPlanet /> :
+    //   null;
     return (
       <SwapiServiceProvider value={this.state.swapiService}>
-        <div className="stardb-app">
-          <Header onServiceChange={this.onServiceChange} />
-          {planet}
+        <Router>
+          <div className="stardb-app">
+            <Header onServiceChange={this.onServiceChange} />
+            <RandomPlanet />
 
-          <RandomPlanet />
-          <PeoplePage />
-          <PlanetsPage />
-          <StarshipsPage />
+            <Route
+              path="/people"
+              component={PeoplePage} />
+            <Route
+              path="/planets"
+              component={PlanetsPage} />
+            <Route
+              path="/starships"
+              component={StarshipsPage} />
 
-        </div>
+          </div>
+        </Router>
       </SwapiServiceProvider>
     );
   }
